@@ -31,4 +31,4 @@ var e,n=arguments[3];!function(t){"object"==typeof exports&&"undefined"!=typeof 
 },{"./get-refs":"EGsz","./markup":"tW6H","./error":"UiX9","./apiService":"eQwa","./components/basic-lightbox":"Cigk"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("@pnotify/core/dist/BrightTheme.css"),require("@pnotify/core/dist/PNotify.css"),require("./js/script.js");
 },{"./sass/main.scss":"clu1","@pnotify/core/dist/BrightTheme.css":"xSVp","@pnotify/core/dist/PNotify.css":"xSVp","./js/script.js":"L4bL"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder-scroll/src.978bd36a.js.map
+//# sourceMappingURL=/goit-js-hw-13-image-finder-scroll/src.a2a522c4.js.map
