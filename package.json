@@ -3,21 +3,21 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://SlayerBS.github.io/goit-js-hw-13-image-finder-io",
+  "homepage": "https://SlayerBS.github.io/goit-js-hw-13-image-finder-scroll",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-13-image-finder-io/",
+    "build": "parcel build src/*.html --public-url /goit-js-hw-13-image-finder-scroll/",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SlayerBS/goit-js-hw-13-image-finder-io.git"
+    "url": "git+https://github.com/SlayerBS/goit-js-hw-13-image-finder-scroll.git"
   },
   "keywords": [],
   "author": "Sergii Bogush",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SlayerBS/goit-js-hw-13-image-finder-io/issues"
+    "url": "https://github.com/SlayerBS/goit-js-hw-13-image-finder-scroll/issues"
   },
   "devDependencies": {
     "@pnotify/core": "^5.2.0",
