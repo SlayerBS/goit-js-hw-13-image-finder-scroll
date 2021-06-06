@@ -19,7 +19,6 @@ function onSearch(elem) {
   if (apiService.query === '') {
     return notify.errorMessage(`Введите поисковый запрос!`);
   }
-
   apiService.resetPage();
   markup.clearMarkup();
   fetchImages();
@@ -28,7 +27,8 @@ function onSearch(elem) {
 function fetchImages() {
   const imageRes = apiService.fetchImages().then(data => {
     markup.imageMarkup(data);
-
+    const responseStatus = apiService.outputResponse;
+    outputResponseStatus(responseStatus);
     if (!data.length) {
       notify.errorMessage(`Ничего не нашли(`);
       return;
@@ -42,15 +42,28 @@ function fetchImages() {
 const onEntries = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting && apiService.query !== '') {
+      console.log('Hello');
       fetchImages();
     }
   });
 };
 
 const options = {
-  treshhold: 0,
-  rootMargin: '200px',
+  rootMargin: '100px',
 };
 const observer = new IntersectionObserver(onEntries, options);
 
 observer.observe(refs.sentinel);
+
+const outputResponseStatus = responseStatus => {
+  console.log(responseStatus);
+
+  if (responseStatus >= 200 && responseStatus < 300) {
+    notify.successMessage(`Статус запроса ${responseStatus}`);
+    return;
+  }
+  if (responseStatus >= 500 && responseStatus < 600) {
+    notify.errorMessage(`Ошибка! Статус HTTP запроса ${responseStatus}`);
+    return;
+  }
+};

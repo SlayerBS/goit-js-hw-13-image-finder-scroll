@@ -5,20 +5,26 @@ export default class ApiService {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
+    this.responseStatus = '';
   }
 
   fetchImages() {
     const url = `${BASE_URL}=${this.searchQuery}&page=${this.page}&per_page=12&key=${KEY}`;
+
     return fetch(url)
       .then(response => {
         if (response.status === 404) return;
-
+        this.responseStatus = response.status;
         return response.json();
       })
       .then(data => {
         this.incrementPage();
         return data.hits;
       });
+  }
+
+  get outputResponse() {
+    return this.responseStatus;
   }
 
   resetPage() {
